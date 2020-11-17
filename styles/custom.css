@@ -15,10 +15,7 @@ body {
     margin: 0;
     padding: .2em 1.8em;
     font-family: "Ubuntu";
-}
-
-header {
-
+    overflow-y: hidden;
 }
 
 header p {
@@ -29,22 +26,21 @@ header p {
     font-weight: 500;
     color: rgb(43, 192, 190);
 }
+
 header nav h1 {
     font-size: 4rem;
     margin-top: .2em;
     margin-bottom: 0;
     font-family: "Avenir LT Std";
 }
-/*"Avenir LT Std"*/
+
 header nav {
     display: flex;
     align-self: flex-end;
     margin: 0;
-    padding:0;
+    padding: 0;
     font-family: "Ubuntu";
     font-weight: 800;
-    padding-bottom: 4.5em;
-    
 }
 
 header li::before {
@@ -62,6 +58,11 @@ header nav ul {
     height: auto;
 }
 
+header a:hover {
+    color: orange;
+    text-decoration: none;
+}
+
 header nav ul li {
     margin-right: 25px;
     padding-left: 5px;
@@ -77,10 +78,6 @@ main {
     border-top: 1px solid black;
     display: flex;
     justify-content: flex-end;
-}
-
-main h2 {
-    margin-top: 1.5em;
 }
 
 main h2 span {
@@ -124,4 +121,118 @@ main li img {
 main nav .home img {
     height: 12px;
     width: 12px;
+}
+
+.active {
+    color: orange;
+    cursor: default;
+    pointer-events: none;
+}
+
+.active.nav-link:active {
+    color: orange;
+    cursor: default;
+    pointer-events: none;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+section {
+    width: 100%;
+    margin-top: 20px;
+}
+
+
+.content h3 {
+    color: aliceblue;
+    font-size: 1em;
+}
+
+h3.title-content.collapsed::before {
+    width: 28px;
+    height: 28px;
+    display: inline-block;
+    content: '';
+    -webkit-mask: url("/assets/svg/plus.svg") no-repeat 50% 50%;
+    mask: url("/assets/svg/plus.svg") no-repeat 50% 50%;
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    margin-right: 10px;
+    align-items: center;
+    background-color: orange;
+    vertical-align: middle;
+}
+
+h3.title-content.actived::before {
+    width: 28px;
+    height: 28px;
+    display: inline-block;
+    content: '';
+    -webkit-mask: url("/assets/svg/minus.svg") no-repeat 50% 50%;
+    mask: url("/assets/svg/minus.svg") no-repeat 50% 50%;
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    margin-right: 10px;
+    align-items: center;
+    background-color: orange;
+    pointer-events: none;
+    vertical-align: middle;
+}
+
+h3.title-content.actived {
+    pointer-events: none;
+}
+
+
+h3.title-container {
+    display: flex;
+    align-items: center;
+}
+
+.articles {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+}
+
+.articles h4 {
+    text-align: start;
+    color: aqua;
+    font-size: 1em;
+    font-weight: 100;
+    margin-bottom: 15px;
+}
+
+.articles div {
+    width: 300px;
+    height: 150px;
+    background-color: aqua;
+}
+
+.articles p {
+    margin-top: 10px;
+    color: aliceblue;
+    text-align: center;
+}
+
+article {
+    max-width: 300px;
+}
+
+.container-article {
+    margin-bottom: 18px;
+    background-color: #011627;
+    padding: .5em;
+}
+
+.container-h3 {
+    display: flex;
+    align-items: baseline;
+    padding: .5em;
 }
